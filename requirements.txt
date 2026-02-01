@@ -1,0 +1,31 @@
+fastapi
+uvicorn
+
+# core ML
+numpy==1.26.4
+scikit-learn
+pandas
+
+# torch
+torch
+torchaudio
+torchvision
+timm
+
+# video / image
+opencv-python-headless
+moviepy
+ffmpeg-python
+pillow
+
+# audio
+librosa>=0.10.0
+soundfile
+pydub
+SpeechRecognition
+
+# utils
+python-multipart
+pydantic
+redis
+firebase-admin
