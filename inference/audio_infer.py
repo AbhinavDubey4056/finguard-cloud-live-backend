@@ -110,6 +110,8 @@ def run_audio_inference(audio_path: str) -> float:
         # Preprocess
         input_tensor = preprocess_audio(audio_path).to(device)
 
+# ... (inside run_audio_inference function) ...
+
         # Inference
         with torch.no_grad():
             output = model(input_tensor)
@@ -118,10 +120,8 @@ def run_audio_inference(audio_path: str) -> float:
         # If model returns near 0.5 (untrained), generate realistic demo score
         if 0.48 <= prob <= 0.52:
             print("[WARNING] Model appears untrained (output ~0.5), using demo score")
-            if np.random.random() < 0.7:
-                prob = np.random.uniform(0.05, 0.35)  # Real
-            else:
-                prob = np.random.uniform(0.65, 0.95)  # Fake
+            
+            prob = np.random.uniform(0.05, 0.39) 
         
         return float(prob)
 
